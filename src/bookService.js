@@ -22,7 +22,7 @@ function searchBooks(searchText) {
     };
   });
   // console.table(formattedBooks);
-  console.log('formattedBooks: ', formattedBooks);
+  // console.log('formattedBooks: ', formattedBooks);
   
   return formattedBooks;
 }
