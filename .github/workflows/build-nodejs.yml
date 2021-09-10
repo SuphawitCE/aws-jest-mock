@@ -1,32 +1,24 @@
----
-name: build-nodejs
+name: NodeJS CI
 
-on:
-  push:
-    paths:
-      - '**'
+on: [push]
 
 jobs:
-  build-nodejs:
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-
-      - name: NPM Install
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build, and test
         run: |
-          npm install
-
-      - name: Run Lint
-        run: |
-          npm run lint
-
-      - name: Run Tests
-        run: |
-          npm run test:watch
-      
-       - name: Run Test Coverage
-        run: |
-          npm run test:coverage
+          npm ci
+          npm test
+        env:
+          CI: true
