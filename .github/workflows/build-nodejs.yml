@@ -1,0 +1,32 @@
+---
+name: build-nodejs
+
+on:
+  push:
+    paths:
+      - '**'
+
+jobs:
+  build-nodejs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+
+      - name: NPM Install
+        run: |
+          npm install
+
+      - name: Run Lint
+        run: |
+          npm run lint
+
+      - name: Run Tests
+        run: |
+          npm run test:watch
+      
+       - name: Run Test Coverage
+        run: |
+          npm run test:coverage
