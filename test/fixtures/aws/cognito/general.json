@@ -1,0 +1,54 @@
+{
+  "mockUsername": "mockUsername",
+  "mockPoolId": "123",
+  "mockCustomAttributes": [
+    {
+      "mockAttributedDataType": "attribute",
+      "mockDeveloperOnlyAttribute": true,
+      "mockMutable": true,
+      "mockName": "Bank",
+      "mockNumberAttributeConstraints": {
+        "MaxValue": "10",
+        "MinValue": "1"
+      },
+      "mockRequired": true,
+      "mockStringAttributeConstraints": {
+        "mockMaxLength": "8",
+        "mockMinLength": "2"
+      }
+    }
+  ],
+  "mockUserPoolId": "testuserpool",
+  "mockGroupName": "lorem",
+  "mockClientMetaData": {
+    "mockMeta": "meta"
+  },
+  "mockDesiredDeliveryMediums": ["sms", "email"],
+  "mockForceAliasCreation": true,
+  "mockMessageAction": "TEST",
+  "mockTemporaryPassword": "tempPassword",
+  "mockUserAttributes": [
+    {
+      "Name": "test_user_attributes",
+      "Value": "1"
+    }
+  ],
+  "mockValidationData": [
+    {
+      "Name": "valid data",
+      "Value": "1"
+    }
+  ],
+
+  "mockAddCustomAttributesPayload": {
+    "CustomAttributes": [{}]
+  },
+
+  "mockAdminUpdateUserAttributesPayload": {
+    "UserAttributes": [
+      { "Name": "custom:custom_auth_verified", "Value": "true" }
+    ],
+    "UserPoolId": "mockUserPoolId_1234",
+    "Username": "mockUsername"
+  }
+}
