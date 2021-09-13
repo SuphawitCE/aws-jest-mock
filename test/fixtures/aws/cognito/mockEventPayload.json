@@ -1,0 +1,81 @@
+{
+  "mockEnv": {
+    "POOL_ID": "mockUserPoolId_1234"
+  },
+  "mockCustomAttributesPayload": {
+    "CustomAttributes": [
+      {
+        "AttributedDataType": "attribute",
+        "DeveloperOnlyAttribute": true,
+        "Mutable": true,
+        "Name": "Bank",
+        "NumberAttributeConstraints": {
+          "MaxValue": "10",
+          "MinValue": "1"
+        },
+        "Required": true,
+        "StringAttributeConstraints": {
+          "MaxLength": "8",
+          "MinLength": "2"
+        }
+      }
+    ],
+    "UserPoolId": "mockUserPoolId_1234"
+  },
+  
+  "mockAdminAddUserToGroupPayload": {
+    "GroupName": "Lorem",
+    "Username": "mockUsername",
+    "UserPoolId": "mockUserPoolId_1234"
+  },
+
+  "mockAdminConfirmSignUpPayload": {
+    "ClientMetaData": {
+      "meta" : "data123" 
+    },
+    "Username": "mockUsername",
+    "UserPoolId": "mockUserPoolId_1234"
+  },
+
+  "mockAdminCreateUserPayload": {
+    "ClientMetaData": { 
+      "meta" : "data123" 
+    },
+    "DesiredDeliveryMediums": [ "apple", "melon", "orange" ],
+    "ForceAliasCreation": false,
+    "MessageAction": "AdminCreateUser-Action",
+    "TemporaryPassword": "password_123",
+    "UserAttributes": [ 
+      { 
+        "Name": "Bank",
+        "Value": "1"
+      }
+    ],
+    "Username": "mockUsername",
+    "UserPoolId": "mockUserPoolId_1234",
+    "ValidationData": [ 
+      { 
+        "Name": "Bank",
+        "Value": "1"
+      }
+    ]
+  },
+
+  "mockAdminDeleteUserPayload": {
+    "Username": "mockUsername",
+    "UserPoolId": "mockUserPoolId_1234"
+  },
+
+  "mockAdminGetUserPayload": {
+    "Username": "mockUsername",
+    "UserPoolId": "mockUserPoolId_1234"
+  },
+
+  "mockAdminUpdateUserAttributesPayload": {
+    "UserAttributes": [
+      { "Name": "custom:custom_auth_verified", "Value": "true" }
+    ],
+    "UserPoolId": "mockUserPoolId_1234",
+    "Username": "mockUsername"
+  }
+}

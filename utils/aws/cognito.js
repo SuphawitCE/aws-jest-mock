@@ -9,7 +9,7 @@ const addCustomAttributes = async (customAttributes, userPoolId) => {
 		CustomAttributes: customAttributes,
 		UserPoolId: userPoolId,
 	};
-
+	console.log(customAttributes);
 	return client.addCustomAttributes(params).promise();
 }
 
@@ -56,7 +56,7 @@ const adminCreateUser = async (clientMetaData, desiredDeliveryMediums,
 const adminDeleteUser = async (userName, userPoolId) => {
 	const params = {
 		Username: userName,
-		userPoolId: UserPoolId,
+		UserPoolId: userPoolId,
 	};
 
 	return client.adminDeleteUser(params).promise();
@@ -65,8 +65,7 @@ const adminDeleteUser = async (userName, userPoolId) => {
 const adminGetUser = async (userName, userPoolId) => {
 	const params = {
 		Username: userName,
-		UserPoolId,
-		userPoolId,
+		UserPoolId: userPoolId,
 	};
 
 	return client.adminGetUser(params).promise();
@@ -79,7 +78,7 @@ const adminUpdateUserAttributes = async (userAttributes, userName, userPoolId) =
 		UserPoolId: userPoolId,
 	};
 
-	console.log(client);
+	// console.log(client);
 	return client.adminUpdateUserAttributes(params).promise();
 };
 
