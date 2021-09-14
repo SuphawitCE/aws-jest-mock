@@ -2,8 +2,6 @@ const aws = require('aws-sdk');
 
 const client = new aws.CognitoIdentityServiceProvider();
 
-// const userPoolId = 'TESTUSERPOOLID';
-
 const addCustomAttributes = async (customAttributes, userPoolId) => {
 	const params = {
 		CustomAttributes: customAttributes,
@@ -77,8 +75,6 @@ const adminUpdateUserAttributes = async (userAttributes, userName, userPoolId) =
 		Username: username,
 		UserPoolId: userPoolId,
 	};
-
-	// console.log(client);
 	return client.adminUpdateUserAttributes(params).promise();
 };
 
