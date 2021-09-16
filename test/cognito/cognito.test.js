@@ -229,6 +229,24 @@ describe('Cognito - cognito.js functionality', () => {
 		expect(createUser).toEqual(MOCK_PROMISE);
 	});
 
+	test('Should resolve adminCreateUser() promise', async () => {
+		mockPromiseFn.mockResolvedValueOnce('adminCreateUser success');
+
+		const createUser = await Cognito.adminCreateUser(
+			ClientMetaData,
+			DesiredDeliveryMediums,
+			ForceAliasCreation,
+			MessageAction,
+			TemporaryPassword,
+			UserAttributes,
+			mockUsername,
+			mockUserPoolId,
+			ValidationData,
+		);
+		expect(mockAdminCreateUser).toBeCalledTimes(1);
+		expect(createUser).toEqual(MOCK_PROMISE);
+	});
+
 	test('Should reject adminCreateUser() promise', async () => {
 		mockPromiseFn.mockRejectedValueOnce(new Error('reject adminCreateUser() thrown error'));
 
@@ -244,7 +262,7 @@ describe('Cognito - cognito.js functionality', () => {
 				mockUserPoolId,
 				ValidationData						
 			)
-    )).rejects.toThrowError('adminCreateUser() error thrown upon rejection');
+    ).rejects.toThrowError('adminCreateUser() error thrown upon rejection'));
 	});
 
 	test('Should resolve adminDeleteUser() promise', async () => {
@@ -258,9 +276,7 @@ describe('Cognito - cognito.js functionality', () => {
 	test('Should reject adminDeleteUser() promise', async () => {
 		mockPromiseFn.mockRejectedValueOnce(new Error('reject adminDeleteUser() thrown error'));
 
-		await expect(async () => (
-			Cognito.adminDeleteUser(mockUsername, mockUserPoolId)
-		)).rejects.toThrowError('adminDeleteUser() error thrown upon rejection');
+		await expect(async () => Cognito.adminDeleteUser(mockUsername, mockUserPoolId).rejects.toThrowError('adminDeleteUser() error thrown upon rejection'));
 	})
 
 	test('Should resolve adminGetUser() promise', async () => {
@@ -276,10 +292,7 @@ describe('Cognito - cognito.js functionality', () => {
 		//	Mock reject value
     mockPromiseFn.mockRejectedValueOnce(new Error('adminGetUser() error thrown upon rejection'));
 
-    await expect(async () => (
-			Cognito.adminGetUser(mockUsername, mockUserPoolId))
-    ).rejects.toThrowError('adminGetUser() error thrown upon rejection');
-
+    await expect(async () => Cognito.adminGetUser(mockUsername, mockUserPoolId).rejects.toThrowError('adminGetUser() error thrown upon rejection'));
 	});
 
 });
