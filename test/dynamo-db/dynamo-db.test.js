@@ -1,6 +1,6 @@
 const {
 	mockItem
-} = require('../fixtures/aws/dynamo-db/general.json');
+} = require('../fixtures/dynamo-db/general.json');
 
 describe('DynamoDB - dynamo-db.js Functionality Test', () => {
 
