@@ -1,3 +1,7 @@
+const {
+	mockItem
+} = require('../fixtures/aws/dynamo-db/general.json');
+
 describe('DynamoDB - dynamo-db.js Functionality Test', () => {
 
   jest.mock('@aws-sdk/util-dynamodb', () => ({
@@ -7,34 +11,6 @@ describe('DynamoDB - dynamo-db.js Functionality Test', () => {
 
 	const getItemResult = {
     Items: [{ PK: 'PID#777-888-999', SK: 'HENRY#9999' }]
-  };
-
-  const item = {
-    PK: 'PID#777-888-999',
-    SK: 'HENRY#99999',
-    msid: '779999',
-    vendor: 'Pomelo',
-    title: 'Test product-updated',
-    description: undefined,
-    tags: ['Pants', 'Denim', 'Short Pants'],
-    variants: {
-      '80712-1001': {
-        option: 'S',
-        barcode: '80712-1001',
-        prices: [Object],
-        metafields: [Array]
-      },
-      '80712-1002': {
-        option: 'M',
-        barcode: '80712-1002',
-        prices: [Object],
-        metafields: [Array]
-      }
-    },
-    m_img: { src: 'https://s3.url.com' },
-    created_at: '2021-04-06T12:32:52Z',
-    updated_at: '2021-04-07T12:32:52Z',
-    images: undefined
   };
 
   const mockSendResult = jest.fn(() => getItemResult);
@@ -118,9 +94,9 @@ describe('DynamoDB - dynamo-db.js Functionality Test', () => {
     const tableName = 'products';
     const expected = {
       TableName: tableName,
-      Item: item
+      Item: mockItem
     };
-    await DynamoDB.upsertItem(item, tableName);
+    await DynamoDB.upsertItem(mockItem, tableName);
     expect(mockPutItemCommand).toBeCalledTimes(1);
     expect(mockPutItemCommand).toHaveBeenCalledWith(expected);
   });
@@ -131,9 +107,9 @@ describe('DynamoDB - dynamo-db.js Functionality Test', () => {
     const tableName = 'products';
     const expected = {
       TableName: tableName,
-      Item: item
+      Item: mockItem
     };
-    await expect(DynamoDB.upsertItem(item, tableName)).rejects.toThrow(
+    await expect(DynamoDB.upsertItem(mockItem, tableName)).rejects.toThrow(
       'dynamo client send error'
     );
     expect(mockPutItemCommand).toBeCalledTimes(1);
