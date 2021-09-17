@@ -75,14 +75,14 @@ describe('DynamoDB - dynamo-db.js Functionality Test', () => {
 		const tableName = 'products';
 		const expected = {
       TableName: tableName,
-      IndexName: ['GSIProductOriginId'],
+      IndexName: ['products_INDEX_NAME'],
       KeyConditionExpression: 'SK = :SK',
       ExpressionAttributeValues: {
         ':SK': { S: 'HENRY#9999' }
       }
     };
 		const result = await DynamoDB.executeQuery(
-			DynamoDB.getItemQueryParams('co.pmlo.henry.staging', '9999'),
+			DynamoDB.getItemQueryParams('HENRY', '9999'),
       tableName
 		);
 		expect(mockGetItemCommand).toBeCalledTimes(1);
@@ -96,7 +96,7 @@ describe('DynamoDB - dynamo-db.js Functionality Test', () => {
 		const tableName = 'products';
 		const expected = {
 			TableName: tableName,
-      IndexName: ['GSIProductOriginId'],
+      IndexName: ['products_INDEX_NAME'],
       KeyConditionExpression: 'SK = :SK',
       ExpressionAttributeValues: {
         ':SK': { S: 'HENRY#9999' }
@@ -104,7 +104,7 @@ describe('DynamoDB - dynamo-db.js Functionality Test', () => {
 		}
 		await expect(
 			DynamoDB.executeQuery(
-				DynamoDB.getItemQueryParams('co.pmlo.henry.staging', 1234),
+				DynamoDB.getItemQueryParams('HENRY', 9999),
 				tableName
 			)
 		).rejects.toThrow('dynamo client send error');
