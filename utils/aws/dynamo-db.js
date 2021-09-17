@@ -20,7 +20,7 @@ const getItemQueryParams = (
   tableName = PRODUCT_TABLE_NAME
 ) => ({
   TableName: tableName,
-  IndexName: [`GSIProductOriginId_INDEX_NAME`],
+  IndexName: [`products_INDEX_NAME`],
   KeyConditionExpression: 'SK = :SK',
   ExpressionAttributeValues: {
     ':SK': { S: getSK(source, origin_id) }
