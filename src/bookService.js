@@ -1,11 +1,13 @@
-const booksProvider = require('./booksProvider');
-const emailService = require('./emailService');
+const booksProvider = require("./booksProvider");
+const emailService = require("./emailService");
 
-console.log('--------------- searchText --------------');
+console.log("--------------- searchText --------------");
 function searchBooks(searchText) {
   const books = booksProvider.getBooks();
 
-  const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(searchText));
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(searchText)
+  );
 
   if (!filteredBooks.length) {
     emailService.sendMissingBookEmail();
@@ -18,12 +20,12 @@ function searchBooks(searchText) {
       categories: book.categories,
       authors: book.authors,
       price: book.price,
-      ordered: book.ordered
+      ordered: book.ordered,
     };
   });
   // console.table(formattedBooks);
-  // console.log('formattedBooks: ', formattedBooks);
-  
+  console.log("formattedBooks: ", formattedBooks);
+
   return formattedBooks;
 }
 
