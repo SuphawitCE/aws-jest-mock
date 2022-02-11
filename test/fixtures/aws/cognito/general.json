@@ -1,0 +1,37 @@
+{
+  "mockEnv": {
+    "POOL_ID": "mockUserPoolId_1234"
+  },
+  "mockUserPoolId": "mockUserPoolId_1234",
+  "mockEmail": "test@gmail.com",
+  "mockPassword": "dummyPassword",
+  "mockPhoneNumber": "+66123456789",
+  "mockPhone": "+66123456789",
+  "mockPoolIdEnv": "mockUserPoolId_1234",
+  "mockEmptyUsers": { "Users": [] },
+  "mockUsersPresent": { "Users": [{ "Name": "Bank" }] },
+  "MOCK_PROMISE": "mockPromise",
+  "mockAdminCreateUserErrorMessage": "Admin create user error",
+  "mockAdminSetUserPasswordErrorMessage": "Admin set user password error",
+  "mockFormattedAttributes": {
+    "email_verified": "true",
+    "custom:latest_login_method": "SRP_A",
+    "custom:migrated_user": "true",
+    "custom:custom_auth_verified": "true",
+    "given_name": "Doe",
+    "family_name": "Doe",
+    "email": "test@gmail.com",
+    "custom:customer_id": "1",
+    "custom:firebase_uid": "ri58QBabcdNVLmKN0Ou1SJq5FDU2"
+  },
+  "mockUsername": "mockUsername",
+  "mockProviderName": "google",
+  "mockProviderUserId": "12345",
+  "mockAttributeName": "custom:custom_auth_verified",
+  "mockWrongEmailformat": "wrong.format",
+  "mockValidEmailformat": "test-valid@gmail.com",
+  "mockCustomAuthLoginMethod": "CUSTOM_AUTH",
+  "MOCK_DUPLICATE_USER_ERROR": "Duplicate account found",
+  "MOCK_INVALID_EMAIL_ERROR": "The email provided is invalid",
+  "mockNoDuplicateAccountsFound": "No duplicate accounts where located"
+}
