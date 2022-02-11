@@ -1,0 +1,87 @@
+{
+  "mockUpdateUserPoolPayload": {
+    "AccountRecoverySetting": {
+      "RecoveryMechanisms": [
+        {
+          "Name": "string",
+          "Priority": 1
+        }
+      ]
+    },
+    "AdminCreateUserConfig": {
+      "AllowAdminCreateUserOnly": false,
+      "InviteMessageTemplate": {
+        "EmailMessage": "string",
+        "EmailSubject": "string",
+        "SMSMessage": "string"
+      },
+      "UnusedAccountValidityDays": 1
+    },
+    "AutoVerifiedAttributes": ["string"],
+    "DeviceConfiguration": {
+      "ChallengeRequiredOnNewDevice": false,
+      "DeviceOnlyRememberedOnUserPrompt": false
+    },
+    "EmailConfiguration": {
+      "ConfigurationSet": "string",
+      "EmailSendingAccount": "string",
+      "From": "string",
+      "ReplyToEmailAddress": "string",
+      "SourceArn": "string"
+    },
+    "EmailVerificationMessage": "string",
+    "EmailVerificationSubject": "string",
+    "LambdaConfig": {
+      "CreateAuthChallenge": "string",
+      "CustomEmailSender": {
+        "LambdaArn": "string",
+        "LambdaVersion": "string"
+      },
+      "CustomMessage": "string",
+      "CustomSMSSender": {
+        "LambdaArn": "string",
+        "LambdaVersion": "string"
+      },
+      "DefineAuthChallenge": "string",
+      "KMSKeyID": "string",
+      "PostAuthentication": "string",
+      "PostConfirmation": "string",
+      "PreAuthentication": "string",
+      "PreSignUp": "string",
+      "PreTokenGeneration": "string",
+      "UserMigration": "string",
+      "VerifyAuthChallengeResponse": "string"
+    },
+    "MfaConfiguration": "string",
+    "Policies": {
+      "PasswordPolicy": {
+        "MinimumLength": 1,
+        "RequireLowercase": true,
+        "RequireNumbers": true,
+        "RequireSymbols": false,
+        "RequireUppercase": false,
+        "TemporaryPasswordValidityDays": 1
+      }
+    },
+    "SmsAuthenticationMessage": "string",
+    "SmsConfiguration": {
+      "ExternalId": "string",
+      "SnsCallerArn": "string"
+    },
+    "UserPoolAddOns": {
+      "AdvancedSecurityMode": "string"
+    },
+    "UserPoolId": "string",
+    "UserPoolTags": {
+      "string": "string"
+    },
+    "VerificationMessageTemplate": {
+      "DefaultEmailOption": "string",
+      "EmailMessage": "string",
+      "EmailMessageByLink": "string",
+      "EmailSubject": "string",
+      "EmailSubjectByLink": "string",
+      "SmsMessage": "string"
+    }
+  }
+}
