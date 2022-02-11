@@ -116,7 +116,7 @@ describe("Cognito - /utils/aws/cognito functonality", () => {
   test("Should return rejects update userpool - updateUserPool()", async () => {
     console.log("updateUserPool() - Rejects");
     mockPromiseFn.mockRejectedValueOnce(
-      new Error("reject updateUserPool() thrown error")
+      new Error("ConcurrentModificationException")
     );
 
     await expect(async () =>
