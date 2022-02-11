@@ -18,7 +18,6 @@ const mockPromise = {
 };
 
 const mockUpdateUserPool = jest.fn(() => mockPromise);
-//	...
 
 const mockCognitoIdentityServiceProvider = jest.fn(() => ({
   updateUserPool: mockUpdateUserPool,
