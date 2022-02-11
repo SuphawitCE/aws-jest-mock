@@ -1,0 +1,31 @@
+{
+	"mockItem": {
+		"PK": "PID#777-888-999",
+		"SK": "HENRY#99999",
+		"msid": "779999",
+		"vendor": "Pomelo",
+		"title": "Test product-updated",
+		"description": "undefined",
+		"tags": ["Pants", "Denim", "Short Pants"],
+		"variants": {
+			"80712-1001": {
+				"option": "S",
+				"barcode": "80712-1001",
+				"prices": [ {} ],
+				"metafields": [ [] ]
+			},
+			"80712-1002": {
+				"option": "M",
+				"barcode": "80712-1002",
+				"prices": [ {} ],
+				"metafields": [ [] ]
+			}
+		},
+		"m_img": {
+			"src": "https://s3.url.com"
+		},
+		"created_at": "2021-04-06T12:32:52Z",
+		"updated_at": "2021-04-07T12:32:52Z",
+		"images": "undefined"
+	}
+}
