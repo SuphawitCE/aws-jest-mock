@@ -1,7 +1,7 @@
 function sendMissingBookEmail() {
-  console.log('Calling email service api...');
+  console.log("Calling email service api...");
 }
 
 module.export = {
-  sendMissingBookEmail
-}
+  sendMissingBookEmail,
+};
